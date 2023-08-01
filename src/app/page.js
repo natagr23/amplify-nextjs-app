@@ -21,23 +21,13 @@ function App() {
     <div className="App">
       <Router>
         <div className="content">
-          <NavLink className="content" exact activeClassName="active" to="/">
+          <NavLink className="content" to="/">
             Home
           </NavLink>
-          <NavLink
-            className="content"
-            exact
-            activeClassName="active"
-            to="/about"
-          >
+          <NavLink className="content" to="/about">
             About
           </NavLink>
-          <NavLink
-            className="content"
-            exact
-            activeClassName="active"
-            to="/premium"
-          >
+          <NavLink className="content" to="/premium">
             Premium Content
           </NavLink>
         </div>
