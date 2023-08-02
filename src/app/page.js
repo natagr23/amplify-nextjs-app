@@ -11,12 +11,12 @@ import {
   Route,
   NavLink,
 } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import PremiumPage from './pages/PremiumPage';
+import Home2 from '../components/Home';
+import About2 from '../components/About';
+import PremiumPage from '../components/PremiumPage';
 import '@aws-amplify/ui-react/styles.css';
 
-function App() {
+function Home() {
   return (
     <div className="App">
       <Router>
@@ -32,8 +32,8 @@ function App() {
           </NavLink>
         </div>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/about" element={<About />}></Route>
+          <Route path="/" element={<Home2 />}></Route>
+          <Route path="/about2" element={<About2 />}></Route>
           <Route path="/premium" element={<PremiumPage />}></Route>
         </Routes>
       </Router>
@@ -41,4 +41,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
