@@ -32,6 +32,16 @@ const links = [
     title: 'Dashboard',
     url: '/dashboard',
   },
+  {
+    id: 7,
+    title: 'Login',
+    url: '/dashboard/login',
+  },
+  {
+    id: 8,
+    title: 'Settings',
+    url: '/dashboard/settings',
+  },
 ];
 
 const Navbar = () => {
@@ -40,7 +50,7 @@ const Navbar = () => {
       <Link href="/">Movie Theme</Link>
       <div>
         {links.map((link) => (
-          <Link key={link.id} href={link.url}>
+          <Link key={link.id} href={link.url} className="content">
             {link.title}
           </Link>
         ))}

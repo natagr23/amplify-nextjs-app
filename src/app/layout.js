@@ -1,3 +1,4 @@
+'use client';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import '@aws-amplify/ui-react/styles.css';
@@ -14,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} className="App">
         <h1>Main Layout</h1>
         <Navbar />
         {children}

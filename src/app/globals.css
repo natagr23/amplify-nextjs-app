@@ -25,3 +25,11 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.App {
+  text-align: center;
+}
+
+.content {
+  margin: 1em;
+}
