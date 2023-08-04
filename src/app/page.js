@@ -1,16 +1,11 @@
 'use client';
 
 import { Amplify } from 'aws-amplify';
-import aws_exports from '../aws-exports';
-Amplify.configure(aws_exports);
+import awsExports from '../../aws-exports';
+
+Amplify.configure(awsExports);
 
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  NavLink,
-} from 'react-router-dom';
 
 import '@aws-amplify/ui-react/styles.css';
 
