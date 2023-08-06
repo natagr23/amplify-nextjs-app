@@ -1,23 +1,26 @@
 'use client';
 import React from 'react';
-import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react';
+import { Amplify } from 'aws-amplify';
 
-const Login = () => {
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+//import awsExports from '../../../../aws-exports';
+Amplify.configure({
+  region: process.env.AWS_COGNITO_REGION,
+  userPoolId: process.env.AWS_COGNITO_USER_POOL_ID,
+  userPoolWebClientId: process.env.AWS_COGNITO_USER_POOL_APP_CLIENT_ID,
+});
+
+export default function App() {
   return (
-    <div>
-      Login
-      <Authenticator>
-        {({ signOut }) => (
-          <div>
-            <h1>Hello, welcome to my site</h1>
-            <h3>You´re autehnticated! this is the premium page</h3>
-            <button onClick={signOut}>Sign Out</button>
-          </div>
-        )}
-      </Authenticator>
-    </div>
+    <Authenticator>
+      {({ signOut, user }) => (
+        <main>
+          <h1>Hello {user.username}</h1>
+          <button onClick={signOut}>Sign out</button>
+        </main>
+      )}
+    </Authenticator>
   );
-};
-
-export default Login;
+}
