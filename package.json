@@ -11,7 +11,7 @@
   "dependencies": {
     "@aws-amplify/ui-react": "^5.1.0",
     "autoprefixer": "10.4.14",
-    "aws-amplify": "^5.3.6",
+    "aws-amplify": "^5.3.7",
     "next": "^13.4.13",
     "postcss": "8.4.27",
     "react": "18.2.0",
