@@ -12,6 +12,10 @@ const UpdateData = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const data = searchParams.get('id');
+  const firstName = searchParams.get('firstName');
+  const lastName = searchParams.get('lastName');
+  const city = searchParams.get('city');
+  const phoneNumber = searchParams.get('phoneNumber');
   console.log(data);
   const handleSubmit = async (event) => {
     // Stop the form from submitting and refreshing the page.
@@ -21,15 +25,15 @@ const UpdateData = () => {
     const params = {
       TableName: 'Users',
       Key: {
-        id: parseInt(data), //primaryKey
+        id: Number(data), //primaryKey
       },
       UpdateExpression:
         'set firstName = :p, lastName = :r, city = :q, phoneNumber = :z, dateModified = :k',
       ExpressionAttributeValues: {
-        ':p': event.target.firstName.value,
-        ':r': event.target.lastName.value,
-        ':q': event.target.city.value,
-        ':z': event.target.phoneNumber.value,
+        ':p': event.target.firstName.value.toString(),
+        ':r': event.target.lastName.value.toString(),
+        ':q': event.target.city.value.toString(),
+        ':z': event.target.phoneNumber.value.toString(),
         ':k': new Date().toLocaleString(),
       },
     };
@@ -63,7 +67,7 @@ const UpdateData = () => {
                 className={styles.inputField}
                 id="firstName"
                 name="firstName"
-                defaultValue={data.firstName}
+                defaultValue={firstName}
               />
             </div>
             <div className="form-group mb-6">
@@ -78,7 +82,7 @@ const UpdateData = () => {
                 className={styles.inputField}
                 id="lastName"
                 name="lastName"
-                defaultValue={data.lastName}
+                defaultValue={lastName}
               />
             </div>
             <div className="form-group mb-6">
@@ -93,7 +97,7 @@ const UpdateData = () => {
                 className={styles.inputField}
                 id="city"
                 name="city"
-                defaultValue={data.city}
+                defaultValue={city}
               />
             </div>
             <div className="form-group mb-6">
@@ -108,7 +112,7 @@ const UpdateData = () => {
                 className={styles.inputField}
                 id="phoneNumber"
                 name="phoneNumber"
-                defaultValue={data.phoneNumber}
+                defaultValue={phoneNumber}
               />
             </div>
 
