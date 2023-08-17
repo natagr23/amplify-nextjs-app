@@ -1,3 +1,6 @@
+## Deploy
+[https://amplify-nextjs-app.vercel.app/](https://amplify-nextjs-app-kvbe-herh0r532-nata-garcia23-hotmailcom.vercel.app/)
+
 ## Web page View
 
 1. Langing Page
