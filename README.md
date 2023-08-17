@@ -5,9 +5,9 @@
 ![Landing Page](https://github.com/natagr23/amplify-nextjs-app/blob/main/src/Data/aws_crud_auth_base1.PNG)
 
 
-2. Login o Acceso para el Empleado
+2. Login
 
-![Employee Login](https://github.com/natagr23/check-in-with-qr/blob/main/src/Data/EmployeeLogin.PNG?raw=true)
+![Login](https://github.com/natagr23/amplify-nextjs-app/blob/main/src/Data/aws_crud_auth_base2.PNG)
 
 
 
