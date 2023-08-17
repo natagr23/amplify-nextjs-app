@@ -2,7 +2,7 @@
 
 1. Langing Page
 
-![Landing Page](https://github.com/natagr23/amplify-nextjs-app/blob/main/src/Data/aws_crud_auth_base1.PNG)
+![Landing Page](https://github.com/natagr23/amplify-nextjs-app/blob/main/src/Data/aws_crud_auth_base2.PNG)
 
 2. Login
 
