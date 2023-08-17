@@ -1,3 +1,5 @@
+## Web page View
+
 1. Langing Page
 
 ![Landing Page](https://github.com/natagr23/amplify-nextjs-app/blob/main/src/Data/aws_crud_auth_base1.PNG)
