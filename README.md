@@ -1,3 +1,13 @@
+1. Langing Page
+
+![Landing Page](https://github.com/natagr23/amplify-nextjs-app/blob/main/src/Data/aws_crud_auth_base1.PNG)
+
+2. Login o Acceso para el Empleado
+
+![Employee Login](https://github.com/natagr23/check-in-with-qr/blob/main/src/Data/EmployeeLogin.PNG?raw=true)
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
