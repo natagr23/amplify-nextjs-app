@@ -44,9 +44,10 @@ const links = [
   },
 ];
 
-const Navbar = () => {
+const Navbar = ({ children }) => {
   return (
     <div>
+      {children}
       <br />
       <Link href="/">Main Navbar</Link>
       <div>
