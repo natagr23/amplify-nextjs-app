@@ -40,14 +40,15 @@ const links = [
   {
     id: 8,
     title: 'Settings',
-    url: '/dashboard/settings',
+    url: '/settings',
   },
 ];
 
 const Navbar = () => {
   return (
     <div>
-      <Link href="/">Movie Theme</Link>
+      <br />
+      <Link href="/">Main Navbar</Link>
       <div>
         {links.map((link) => (
           <Link key={link.id} href={link.url} className="content">
