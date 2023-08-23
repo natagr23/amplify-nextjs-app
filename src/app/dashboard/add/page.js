@@ -1,7 +1,9 @@
 'use client';
+import React, { useContext } from 'react';
 import { PutCommand } from '@aws-sdk/lib-dynamodb';
 import { ddbDocClient } from '../(auth)/config/ddbDocClient';
 import { useRouter } from 'next/navigation';
+import { clientContext } from '../../../context/clientContext';
 
 const styles = {
   inputField:
@@ -10,6 +12,7 @@ const styles = {
 
 const AddData = () => {
   const router = useRouter();
+  const ctx = useContext(clientContext);
 
   const handleSubmit = async (event) => {
     // Stop the form from submitting and refreshing the page.
@@ -19,7 +22,7 @@ const AddData = () => {
     const params = {
       TableName: 'Users',
       Item: {
-        id: Math.floor(Math.random() * 10000),
+        id: Number(event.target.phoneNumber.value),
         dateAdded: new Date().toLocaleString(),
         dateModified: '',
         firstName: event.target.firstName.value,
@@ -28,7 +31,7 @@ const AddData = () => {
         phoneNumber: event.target.phoneNumber.value,
       },
     };
-
+    console.log(ctx.client);
     try {
       const data = await ddbDocClient.send(new PutCommand(params));
       console.log('Success - item added', data);
