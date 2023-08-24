@@ -16,6 +16,7 @@ const UpdateData = () => {
   const lastName = searchParams.get('lastName');
   const city = searchParams.get('city');
   const phoneNumber = searchParams.get('phoneNumber');
+  const dateAdded = searchParams.get('dateAdded');
   console.log(data);
   const handleSubmit = async (event) => {
     // Stop the form from submitting and refreshing the page.
@@ -23,17 +24,18 @@ const UpdateData = () => {
 
     // setting up the parameters for UpdateCommand
     const params = {
-      TableName: 'Users',
+      TableName: 'Users3',
       Key: {
         id: Number(data), //primaryKey
+        dateAdded: dateAdded, //sortKey (if any)
       },
       UpdateExpression:
         'set firstName = :p, lastName = :r, city = :q, phoneNumber = :z, dateModified = :k',
       ExpressionAttributeValues: {
-        ':p': event.target.firstName.value.toString(),
-        ':r': event.target.lastName.value.toString(),
-        ':q': event.target.city.value.toString(),
-        ':z': event.target.phoneNumber.value.toString(),
+        ':p': event.target.firstName.value,
+        ':r': event.target.lastName.value,
+        ':q': event.target.city.value,
+        ':z': event.target.phoneNumber.value,
         ':k': new Date().toLocaleString(),
       },
     };
