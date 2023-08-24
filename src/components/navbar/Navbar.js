@@ -42,6 +42,11 @@ const links = [
     title: 'Settings',
     url: '/settings',
   },
+  {
+    id: 9,
+    title: 'Create Table',
+    url: '/dashboard/create',
+  },
 ];
 
 const Navbar = ({ children }) => {
