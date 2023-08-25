@@ -8,7 +8,7 @@ export const params = {
   AttributeDefinitions: [
     {
       AttributeName: 'id', //Primary Key name
-      AttributeType: 'N', //type of the primary key
+      AttributeType: 'S', //type of the primary key
     },
     {
       AttributeName: 'dateAdded', //Sort key name
@@ -29,7 +29,7 @@ export const params = {
     ReadCapacityUnits: 5,
     WriteCapacityUnits: 5,
   },
-  TableName: 'Users3', //TABLE_NAME
+  TableName: 'Users4', //TABLE_NAME
   StreamSpecification: {
     StreamEnabled: true,
     StreamViewType: 'KEYS_ONLY',
