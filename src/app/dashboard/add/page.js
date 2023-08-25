@@ -37,9 +37,9 @@ const AddData = () => {
 
     // Get data from the form.
     const params = {
-      TableName: 'Users3',
+      TableName: 'Users4',
       Item: {
-        id: Math.floor(Math.random() * 10000),
+        id: username.toString(),
         dateAdded: new Date().toLocaleString(),
         dateModified: '',
         firstName: event.target.firstName.value,

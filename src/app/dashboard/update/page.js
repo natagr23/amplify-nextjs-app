@@ -24,9 +24,9 @@ const UpdateData = () => {
 
     // setting up the parameters for UpdateCommand
     const params = {
-      TableName: 'Users3',
+      TableName: 'Users4',
       Key: {
-        id: Number(data), //primaryKey
+        id: data, //primaryKey
         dateAdded: dateAdded, //sortKey (if any)
       },
       UpdateExpression:

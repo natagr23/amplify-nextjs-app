@@ -32,7 +32,7 @@ const ViewData = () => {
   //   scanning the dynamodb table
   const scanTable = async () => {
     try {
-      data = await ddbDocClient.send(new ScanCommand({ TableName: 'Users3' }));
+      data = await ddbDocClient.send(new ScanCommand({ TableName: 'Users4' }));
       setTableData(data.Items);
       console.log('success', data.Items);
     } catch (err) {
@@ -45,7 +45,7 @@ const ViewData = () => {
     try {
       await ddbDocClient.send(
         new DeleteCommand({
-          TableName: 'Users3',
+          TableName: 'Users4',
           Key: {
             id: primaryKeyValue,
             dateAdded: sortKeyValue,
