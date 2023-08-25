@@ -1,9 +1,10 @@
 'use client';
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { PutCommand } from '@aws-sdk/lib-dynamodb';
 import { ddbDocClient } from '../(auth)/config/ddbDocClient';
 import { useRouter } from 'next/navigation';
 import { clientContext } from '../../../context/clientContext';
+import { Auth } from 'aws-amplify';
 
 const styles = {
   inputField:
@@ -14,6 +15,22 @@ const AddData = () => {
   const router = useRouter();
   const ctx = useContext(clientContext);
 
+  const [username, setUsername] = useState('');
+
+  useEffect(() => {
+    // Dentro de useEffect, obtén el usuario actual
+    async function fetchUser() {
+      try {
+        const user = await Auth.currentAuthenticatedUser();
+        setUsername(user.username);
+      } catch (error) {
+        setUsername('');
+      }
+    }
+
+    fetchUser();
+  }, []);
+  console.log(username);
   const handleSubmit = async (event) => {
     // Stop the form from submitting and refreshing the page.
     event.preventDefault();
@@ -31,7 +48,7 @@ const AddData = () => {
         phoneNumber: event.target.phoneNumber.value,
       },
     };
-    console.log(ctx.client);
+
     try {
       const data = await ddbDocClient.send(new PutCommand(params));
       console.log('Success - item added', data);
@@ -43,7 +60,7 @@ const AddData = () => {
     }
   };
   return (
-    <>
+    <div>
       <div className="flex flex-col justify-center items-center h-screen">
         <p className="text-3xl mb-20">Add Data</p>
         <div className="block p-6 rounded-lg shadow-lg bg-white w-1/3 justify-self-center">
@@ -92,29 +109,29 @@ const AddData = () => {
             <button
               type="submit"
               className="
-    px-6
-    py-2.5
-    bg-blue-600
-    text-white
-    font-medium
-    text-xs
-    leading-tight
-    uppercase
-    rounded
-    shadow-md
-    hover:bg-blue-700 hover:shadow-lg
-    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-    active:bg-blue-800 active:shadow-lg
-    transition
-    duration-150
-    ease-in-out"
+              px-6
+              py-2.5
+              bg-blue-600
+              text-white
+              font-medium
+              text-xs
+              leading-tight
+              uppercase
+              rounded
+              shadow-md
+              hover:bg-blue-700 hover:shadow-lg
+              focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+              active:bg-blue-800 active:shadow-lg
+              transition
+              duration-150
+              ease-in-out"
             >
               Submit
             </button>
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
