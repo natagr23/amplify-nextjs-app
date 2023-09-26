@@ -1,5 +1,5 @@
 ## Deploy
-[[(https://amplify-nextjs-app-kvbe-herh0r532-nata-garcia23-hotmailcom.vercel.app/)](https://amplify-nextjs-app-kvbe-herh0r532-nata-garcia23-hotmailcom.vercel.app/)](https://amplify-nextjs-app-kvbe.vercel.app/)
+https://amplify-nextjs-app-kvbe.vercel.app/
 
 ## Web page View
 
